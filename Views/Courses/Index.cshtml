@@ -1,0 +1,100 @@
+@model IEnumerable<SchoolManagement.Mvc.Data.Course>
+<link id="theme-link" rel="stylesheet" href="~/css/light-theme.css" asp-append-version="true" />
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="mt-5">Courses:</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+</svg> Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credits)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td class="d-flex justify-content-end">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
+                <button data-id="@item.Id" class="btn btn-danger DeleteBtn" type="button">Delete</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<form asp-action="Delete" id="coursedeleteform">
+	<input type="hidden" id="courseid" name="Id">
+</form>
+
+@section Scripts{
+    <script>
+$(function () {
+            $('.table').DataTable();
+            $('.DeleteBtn').click(function (e) {
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-success",
+                        cancelButton: "btn btn-danger"
+                    },
+                    buttonsStyling: false
+                });
+
+                swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Deleted!",
+                            text: "Selected Record is Deleted.",
+                            icon: "success"
+                        });
+
+                        var btn = $(this);
+                        var id = btn.data("id");
+                        $('#courseid').val(id);
+                        $('#coursedeleteform').submit();
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Cancelled",
+                            text: "Your Record is Safe!",
+                            icon: "error"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}

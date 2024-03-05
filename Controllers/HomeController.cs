@@ -2,6 +2,7 @@
 using SchoolManagement.Mvc.Models;
 using System.Diagnostics;
 
+
 namespace SchoolManagement.Mvc.Controllers
 {
     public class HomeController : Controller
@@ -18,7 +19,7 @@ namespace SchoolManagement.Mvc.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }
