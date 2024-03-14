@@ -1,13 +1,8 @@
-// using SchoolManagement.Mvc.Data;
-// using SchoolManagement.Mvc.Models;
+public class StudentEnrollmentViewModel{
 
-// namespace SchoolManagement.Mvc.Models;
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public bool IsEnrolled { get; set; }
 
-
-// public class StudentEnrollmentViewModel{
-//     public int Id { get; set; }
-//     public string FirstName { get; set; }
-//     public string LastName { get; set; }
-//     public bool IsEnrolled { get; set; }
-
-// }
+}

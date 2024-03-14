@@ -1,0 +1,97 @@
+@model SchoolManagement.Mvc.Models.ClassEnrollmentViewModel
+
+@{
+    ViewData["Title"] = "Manage Enrollments";
+}
+
+<h2>Manage Enrollments:</h2>
+<h4> <br><br><span style="color: red;">@Model.Class.Time</span> session for the <span style="color: rgb(0, 255, 47);">@Model.Class.Course.Code - @Model.Class.Course.Name</span> </h4>
+<h4>Instructor Name: @Model.Class.Lecturer.FirstName @Model.Class.Lecturer.LastName</h4>
+
+<hr>
+<h3>Students List:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var student in Model.Students)
+        {
+            <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>
+                    @if(student.IsEnrolled)
+                    {
+                        <button data-studentId="@student.Id" data-shouldEnroll="false" class="btn btn-danger enrollmentBtn" type="button">Remove</button>
+                    }
+                    else
+                    {
+                        <button data-studentId="@student.Id" data-shouldEnroll="true" class="btn btn-success enrollmentBtn" type="button">Add</button>
+
+                    }
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<form asp-action="EnrollStudent" id="classEnrollmentForm">
+    <input type="hidden" id="classid" name="ClassId" value="@Model.Class.Id">
+    <input type="hidden" id="studentId" name="StudentId">
+    <input type="hidden" id="shouldEnroll" name="ShouldEnroll">
+
+</form>
+
+@section Scripts{
+<script>
+$(function () {
+            $('.table').DataTable();
+            $('.enrollmentBtn').click(function (e) {
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-success",
+                        cancelButton: "btn btn-danger"
+                    },
+                    buttonsStyling: false
+                });
+
+                swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "Please Confirm This Action!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Confirm Enrollment",
+                    cancelButtonText: "Cancel Enrollment",
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Enrolled!",
+                            text: "Selected Student is Enrolled",
+                            icon: "success"
+                        });
+
+                        var btn = $(this);
+                        var studentId = btn.attr("data-studentId");
+                        var shouldEnroll = btn.attr("data-shouldEnroll");
+                        $('#studentId').val(studentId);
+                        $('#shouldEnroll').val(shouldEnroll);
+                        $('#classEnrollmentForm').submit();
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Cancelled",
+                            text: "Enrollment Aborted!",
+                            icon: "error"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    }

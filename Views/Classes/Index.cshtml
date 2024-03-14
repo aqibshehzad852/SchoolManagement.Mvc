@@ -42,7 +42,7 @@
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a> 
                 <button data-id="@item.Id" class="btn btn-danger DeleteBtn" type="button">Delete</button>
-                <a asp-action="ManageEnrollments" asp-route-id="@item.Id" class="btn btn-success">Manage Enrollments</a>
+                <a asp-action="ManageEnrollments" asp-route-classId="@item.Id" class="btn btn-success">Manage Enrollments</a>
             </td>
         </tr>
 }
