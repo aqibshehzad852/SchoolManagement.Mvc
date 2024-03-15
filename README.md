@@ -55,5 +55,9 @@ https://drive.google.com/drive/u/0/folders/1l5WNyyAqXEl60IXMVOBjE1lWhV7R8wqa
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
+![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
+![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
+![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
+![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
 
