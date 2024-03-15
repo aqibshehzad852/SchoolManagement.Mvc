@@ -21,10 +21,9 @@
     <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a class="nav-link px-2 text-white box" asp-area="" asp-controller="Home" asp-action="Index"
-              aria-selected="true">Home</a></li>
+          <li><a class="nav-link px-2 text-white box" asp-area="" asp-controller="Home" asp-action="Index" aria-selected="true">Home</a></li>
           <li><a class="nav-link px-2 text-white box" asp-area="" asp-controller="Home" asp-action="About">About</a>
-          </li>
+          <li><a class="nav-link px-2 text-white box" asp-area="" asp-controller="Home" asp-action="Gallery">Gallery</a></li>
           @if(User.Identity.IsAuthenticated){
           <li><a class="nav-link px-2 text-white box" asp-area="" asp-controller="Students" asp-action="Index">Students</a></li>
           <li><a class="nav-link px-2 text-white box" asp-area="" asp-controller="Lecturers" asp-action="Index">Lecturers</a></li>
@@ -68,13 +67,12 @@
         <div class="row mt-3">
           <div class="col-6 col-md-2 mb-3 text-white">
 
-            <h5>Section</h5>
+            <u><h5>Information Section:</h5></u>
 
             <ul class="nav flex-column py-4">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Features</a>
-              </li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Privacy Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white"></a>How to Enroll</li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Ranking</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">FAQs</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">About</a></li>
             </ul>
@@ -82,31 +80,28 @@
 
           <div class="col-6 col-md-2 mb-3 text-white">
 
-            <h5>Section</h5>
+            <u><h5>Career Section:</h5></u>
 
             <ul class="nav flex-column py-4">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Features</a>
-              </li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">About</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Faculty</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Administration</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white"></a>Transportation</li>
+  
             </ul>
           </div>
 
           <div class="col-6 col-md-2 mb-3 text-white">
 
-            <h5>Section</h5>
+             <u><h5>Admission Section:</h5></u>
 
-            <ul class="nav flex-column py-4">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Home</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Features</a>
-              </li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Pricing</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">About</a></li>
-            </ul>
-          </div>
+             <ul class="nav flex-column py-4">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Fee Structure</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Scholarships</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Online Admissions</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Admission Form</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary text-white">Gallery</a></li>
+            </ul> 
+          </div> 
 
           <div class="col-md-5 offset-md-1 mb-3 text-white">
             <form>
@@ -122,7 +117,7 @@
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-white">
-          <p>&copy; @DateTime.Now.Year SchoolManagement, Inc. All rights reserved.</p>
+          <p>&copy; @DateTime.Now.Year MySchoolSystem, Inc. All rights reserved.</p>
 
           @* Social media icons *@
 

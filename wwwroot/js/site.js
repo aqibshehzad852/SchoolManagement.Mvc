@@ -20,14 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function applyTheme() {
     const isDarkTheme = document.getElementById('toggle-theme').checked;
     
-    // Implement your dark/light theme logic here
-    document.body.style.backgroundColor = isDarkTheme ? '#353535' : 'white';
+    document.body.style.backgroundColor = isDarkTheme ? '#212529' : 'white';
     
-    // Set text color to white in dark mode
     const textColor = isDarkTheme ? 'white' : 'black';
     document.body.style.color = textColor;
 
-    // Add more styling adjustments as needed
+
 }
 
 

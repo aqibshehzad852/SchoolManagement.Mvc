@@ -66,23 +66,23 @@ $(function () {
                     text: "Please Confirm This Action!",
                     icon: "warning",
                     showCancelButton: true,
-                    confirmButtonText: "Confirm Enrollment",
-                    cancelButtonText: "Cancel Enrollment",
+                    confirmButtonText: "Confirm",
+                    cancelButtonText: "Cancel",
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
                         swalWithBootstrapButtons.fire({
-                            title: "Enrolled!",
-                            text: "Selected Student is Enrolled",
+                            title: "Done!",
+                            text: "",
                             icon: "success"
                         });
 
                         var btn = $(this);
                         var studentId = btn.attr("data-studentId");
                         var shouldEnroll = btn.attr("data-shouldEnroll");
-                        $('#studentId').val(studentId);
-                        $('#shouldEnroll').val(shouldEnroll);
-                        $('#classEnrollmentForm').submit();
+                        $("#studentId").val(studentId);
+                        $("#shouldEnroll").val(shouldEnroll);
+                        $("#classEnrollmentForm").submit();
                     } else if (result.dismiss === Swal.DismissReason.cancel) {
                         swalWithBootstrapButtons.fire({
                             title: "Cancelled",

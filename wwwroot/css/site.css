@@ -156,6 +156,7 @@ body {
 /* rtl:begin:remove */
 .featurette-heading {
   letter-spacing: -.05rem;
+  margin-top: 0;
 }
 
 /* rtl:end:remove */
@@ -426,4 +427,6 @@ ul {
   transform: translateX(0);
   transition: .3s transform linear, .3s height linear .5s;
 }
+
+
 
