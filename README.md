@@ -1,7 +1,7 @@
 
 # Extensive School Management WebApp
 
-Welcome to interactive school system built on the ASP.NET MVC Core 7.0 framework with a database-first approach. THis system caters to four key roles:
+Welcome to an interactive school system built on the ASP.NET MVC Core 7.0 framework with a database-first approach. This system caters to four key roles:
 
 **1)Lecturer Management**
 
@@ -55,9 +55,24 @@ https://drive.google.com/drive/u/0/folders/1l5WNyyAqXEl60IXMVOBjE1lWhV7R8wqa
 
 ## Screenshots
 
-![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
-![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
-![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
-![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
-![App Screenshot](G:\MyProjects\SchoolManagement.Mvc\Screenshots\1.png)
+## 1:
+
+![Dashboard](SchoolManagement-Screens/1.png)
+
+## 2:
+
+![Category](SchoolManagement-Screens/2.png)
+
+## 3:
+
+![Feature 1](SchoolManagement-Screens/3.png)
+
+## 4:
+
+![Feature 1](SchoolManagement-Screens/4.png)
+
+## 5:
+
+![Feature 1](SchoolManagement-Screens/5.png)
+
 
