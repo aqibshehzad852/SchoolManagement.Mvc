@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using SchoolManagement.Mvc.Models;
 
 namespace SchoolManagement.Mvc.Data;
 
@@ -20,6 +21,11 @@ public partial class SchoolManagementDbContext : DbContext
     public virtual DbSet<Lecturer> Lecturers { get; set; }
 
     public virtual DbSet<Student> Students { get; set; }
+
+    public virtual DbSet<NewsletterSubscription> NewsletterSubscriptions { get; set; }
+
+
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -28,4 +28,39 @@ function applyTheme() {
 
 }
 
+document.getElementById("subscribeForm").addEventListener("submit", function (event) {
+    event.preventDefault(); 
+
+    var formData = new FormData(this);
+
+    fetch(this.action, {
+        method: this.method,
+        body: formData
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+               
+                Toastify({
+                    text: 'Thanks for subscribing to our newsletter!',
+                    duration: 3000,
+                    gravity: 'top',
+                    backgroundColor: '#5cb85c',
+                    close: true
+                }).showToast();
+            } else {
+                console.error('Subscription failed');
+            
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
 

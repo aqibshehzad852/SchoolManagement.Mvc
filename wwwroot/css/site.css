@@ -428,5 +428,10 @@ ul {
   transition: .3s transform linear, .3s height linear .5s;
 }
 
+#newsletter1 {
+    color: white
+}
+
+
 
 

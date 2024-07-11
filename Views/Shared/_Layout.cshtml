@@ -1,4 +1,5 @@
 ﻿@using Microsoft.Extensions.Options
+@model NewsletterSubscription 
 
 
 <!DOCTYPE html>
@@ -14,6 +15,7 @@
   <link rel="stylesheet" href="~/SchoolManagement.Mvc.styles.css" asp-append-version="true" />
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/" />
   <link id="theme-link" rel="stylesheet" href="~/css/light-theme.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -104,17 +106,18 @@
             </ul> 
           </div> 
 
-          <div class="col-md-5 offset-md-1 mb-3 text-white">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
-              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" class="form-control bg-dark" placeholder="Email address">
-                <button class="btn btn-primary" type="button">Subscribe</button>
-              </div>
-            </form>
-          </div>
+<div class="col-md-5 offset-md-1 mb-3 text-white">
+<form asp-action="Subscribe" method="post" id="subscribeForm">
+    <h5>Subscribe to our newsletter</h5>
+    <p>Monthly digest of what's new and exciting from us.</p>
+    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+        <label asp-for="Email" class="visually-hidden">Email address</label>
+        <input asp-for="Email" id="newsletter1" class="form-control bg-dark" placeholder="Email address">
+        <button type="submit" class="btn btn-primary" id="subscribeButton">Subscribe</button>
+    </div>
+</form>
+</div>
+
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-white">
@@ -205,15 +208,16 @@
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="~/js/site.js" asp-append-version="true"></script>
   <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
  <script>
   window.botpressWebChat.init({
       "composerPlaceholder": "Ask from the AI Assistant",
       "botConversationDescription": "Ask anything, Anytime",
-      "botId": "Your-botID-from-bottpress-Bot",
+      "botId": "db446b15-2668-4bbd-9b0d-29986f43c0a1",
       "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
       "messagingUrl": "https://messaging.botpress.cloud",
-      "clientId": "Your-clientId-from-bottpress-Bot",
-      "webhookId": "Your-webhookId-from-bottpress-Bot",
+      "clientId": "db446b15-2668-4bbd-9b0d-29986f43c0a1",
+      "webhookId": "374d95d1-e047-49d2-9d89-825279c2ef1a",
       "lazySocket": true,
       "themeName": "prism",
       "botName": "AI Assistant",
