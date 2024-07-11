@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.Extensions.Options
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +20,7 @@
 <body>
 
 
-  <header class="p-3 text-bg-dark bg-dark mb-2" style="position: -webkit-sticky; position: sticky; top: 0; z-index: 50">
+  <header class="p-3 text-bg-dark bg-dark mb-2" style="position: -webkit-sticky; position: relative; top: 0; z-index: 50">
     <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -37,12 +40,6 @@
 
         <partial name="_loginPartial"/>
 
-
-        @* <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          @* <button type="button" class="btn btn-warning">Sign-up</button> 
-        </div> *@
-
         <label class="ui-switch">
           <input type="checkbox" id="toggle-theme">
           <div class="slider">
@@ -58,7 +55,11 @@
   <div class="container">
     <main role="main" class="pb-1">
       @RenderBody()
-    </main>
+   <div id="bp-web-widget" style="position: fixed; bottom: 0; right: 0;"></div>    
+   
+
+    
+</main>
   </div>
 
   <div class="Bottom container-fluid bg-dark fixed ">
@@ -186,7 +187,7 @@
                 </svg>
 
               </a>
-              <div class="tooltip">Youtube</div>
+              <div class="tooltip">Youtubes</div>
             </li>
           </ul>
 
@@ -197,18 +198,34 @@
 
   </div>
 
-
+  
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="~/js/site.js" asp-append-version="true"></script>
-
-
-
-
-
-
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+ <script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Ask from the AI Assistant",
+      "botConversationDescription": "Ask anything, Anytime",
+      "botId": "Your-botID-from-bottpress-Bot",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "Your-clientId-from-bottpress-Bot",
+      "webhookId": "Your-webhookId-from-bottpress-Bot",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "AI Assistant",
+      "avatarUrl": "https://cdn.pixabay.com/photo/2024/07/07/15/10/ai-generated-8879115_1280.jpg",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "enableConversationDeletion": true,
+      "theme": "prism",
+      "themeColor": "#2563eb",
+      "allowedOrigins": []
+  });
+</script> 
 
   @await RenderSectionAsync("Scripts", required: false)
 </body>
