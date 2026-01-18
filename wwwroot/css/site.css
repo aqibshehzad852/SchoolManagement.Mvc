@@ -108,6 +108,38 @@ body {
   color: rgb(var(--bs-tertiary-color-rgb));
 }
 
+/* dark theme overrides */
+.dark-theme {
+  background-color: #212529;
+  color: #f5f5f5;
+}
+
+.dark-theme table.dataTable tbody td,
+.dark-theme table.dataTable thead th {
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .form-control,
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+  background-color: #2b2f31;
+  color: #f5f5f5;
+  border-color: #3e4446;
+}
+
+.dark-theme .table thead th,
+.dark-theme .table tbody td {
+  border-color: rgba(255,255,255,0.06);
+}
+
+.dark-theme .page-link,
+.dark-theme .dataTables_length select {
+  background-color: #2b2f31;
+  color: #f5f5f5;
+  border-color: #3e4446;
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
