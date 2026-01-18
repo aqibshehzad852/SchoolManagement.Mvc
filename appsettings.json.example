@@ -1,0 +1,9 @@
+{
+  "ConnectionStrings": {
+    "SchoolManangementDbConnection": "<YOUR_CONNECTION_STRING_HERE>"
+  },
+  "Auth0": {
+    "Domain": "<AUTH0_DOMAIN>",
+    "ClientId": "<AUTH0_CLIENT_ID>"
+  }
+}
