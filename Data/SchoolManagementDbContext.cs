@@ -75,6 +75,14 @@ public partial class SchoolManagementDbContext : DbContext
             entity.Property(e => e.LastName).HasMaxLength(50);
         });
 
+        modelBuilder.Entity<NewsletterSubscription>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Newsletter__3214EC07C2266ABB");
+
+            entity.Property(e => e.Email).HasMaxLength(50);
+ 
+        });
+
         modelBuilder.Entity<Student>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Students__3214EC07CAAFCD20");
