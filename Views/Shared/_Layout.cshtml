@@ -1,5 +1,4 @@
 ﻿@using Microsoft.Extensions.Options
-@model NewsletterSubscription 
 
 
 <!DOCTYPE html>
@@ -106,13 +105,13 @@
             </ul> 
           </div> 
 
-<div class="col-md-5 offset-md-1 mb-3 text-white">
+    <div class="col-md-5 offset-md-1 mb-3 text-white">
 <form asp-action="Subscribe" method="post" id="subscribeForm">
     <h5>Subscribe to our newsletter</h5>
     <p>Monthly digest of what's new and exciting from us.</p>
     <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-        <label asp-for="Email" class="visually-hidden">Email address</label>
-        <input asp-for="Email" id="newsletter1" class="form-control bg-dark" placeholder="Email address">
+        <label for="newsletter1" class="visually-hidden">Email address</label>
+        <input name="Email" id="newsletter1" class="form-control bg-dark" placeholder="Email address">
         <button type="submit" class="btn btn-primary" id="subscribeButton">Subscribe</button>
     </div>
 </form>
