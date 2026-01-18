@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolManagement.Mvc.Data;
 
@@ -11,9 +12,11 @@ using SchoolManagement.Mvc.Data;
 namespace SchoolManagement.Mvc.Migrations
 {
     [DbContext(typeof(SchoolManagementDbContext))]
-    partial class SchoolManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260118200604_Fixing-Newsletter_Adding_Seed_Data")]
+    partial class FixingNewsletter_Adding_Seed_Data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

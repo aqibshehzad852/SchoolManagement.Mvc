@@ -1,5 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
+using SchoolManagement.Mvc.Models;
 
 namespace SchoolManagement.Mvc.Data;
 
@@ -76,6 +77,19 @@ public static class SeedData
             new Enrollment { Id = 9, StudentId = 9, ClassId = 9, Grade = "A" },
             new Enrollment { Id = 10, StudentId = 10, ClassId = 10, Grade = "B" }
         );
-
+        
+        // Newsletter subscriptions
+        modelBuilder.Entity<NewsletterSubscription>().HasData(
+            new NewsletterSubscription { Id = 1, Email = "user1@example.com" },
+            new NewsletterSubscription { Id = 2, Email = "user2@example.com" },
+            new NewsletterSubscription { Id = 3, Email = "user3@example.com" },
+            new NewsletterSubscription { Id = 4, Email = "user4@example.com" },
+            new NewsletterSubscription { Id = 5, Email = "user5@example.com" },
+            new NewsletterSubscription { Id = 6, Email = "user6@example.com" },
+            new NewsletterSubscription { Id = 7, Email = "user7@example.com" },
+            new NewsletterSubscription { Id = 8, Email = "user8@example.com" },
+            new NewsletterSubscription { Id = 9, Email = "user9@example.com" },
+            new NewsletterSubscription { Id = 10, Email = "user10@example.com" }
+        );
     }
 }
